@@ -1,0 +1,56 @@
+<html>
+<head></head>
+<body>
+
+<table border = 1 cellpadding= 5 cellspacing = 20>
+<%
+
+set conn=Server.CreateObject("ADODB.Connection")
+conn.Provider="Microsoft.ACE.OLEDB.12.0"
+conn.Open Server.MapPath("database/dbRestobar.accdb")
+'conn.Open ("database/dbItems.accdb")
+
+set rsItems = server.createobject("adodb.recordset")
+rsItems.open "SELECT * FROM Items",conn
+
+set rsCategory = server.createobject("adodb.recordset")
+rsCategory.open "SELECT * FROM Category",conn
+
+dim count
+count = 0
+
+dim category
+category = rsCategory.Fields.Count + 1
+
+
+
+
+	do while rsItems.fields("catID") = category
+	
+	do until rsItems.EOF
+	if count < 3 then
+		response.write "<td>" & rsItems.fields ("catID") & "</td>"
+		response.write "<td><img width = '300' height = '200' src=' image/" & rsItems.fields("itemNo") & ".jpg' /><h3>" & rsItems.fields("name") &  "</h3>" & rsItems.fields("description") & "<br />Php " & formatnumber(rsItems.fields ("price"))
+		response.write "<br />Qty.: <input type='Number' name='qty' min='1' value='1'> <input type='Submit' value='Select'></td>" 
+		count = count + 1
+		
+		rsItems.MoveNext
+	else
+	response.write "<tr> </tr>"
+	count = 0
+	end if
+	loop
+	loop
+	
+	
+
+
+ 
+rsItems.close
+rsCategory.close
+conn.close
+
+%> 
+
+</body>
+</html>

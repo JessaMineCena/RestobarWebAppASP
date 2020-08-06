@@ -1,0 +1,14 @@
+listofItem5.asp
+* didto ang kulang sa pag INSERT sa OrderDetails ga ka no update permissions
+
+addOrdertoDB.asp
+* ka INSERT na sa Order table 
+
+PROBLEEEEMS
+* how to get the OrderID to insert in OrderDetails
+* generate report 
+	*Quotation, Daily Taking, Daily taking sa Cashier, Date Range Report
+* employee ID/sa cashier nga dapat makuha didto sa dashboard
+
+WALA NAKO GITIWAS
+ang fpdf nga mag generate ug report sa sa list of items and by categories

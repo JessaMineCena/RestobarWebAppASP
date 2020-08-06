@@ -1,0 +1,6 @@
+PRIMARY datas at the moment to be inserted into the database
+
+CLICK PLACE ORDER
+INSERT INTO Order: tableNo(naa), OrderDate(generated), OrderTime(generated, crewNo(himua pa ni Joi)
+then
+INSERT INTO OrderDetails: OrderNo(from Order table), itemsNo(naa), price(naa), qty(naa)
